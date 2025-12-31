@@ -117,11 +117,11 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Wolverine Robotics is a team of students from Wakeland High School who are passionate about robotics."
   location         : "Frisco, Texas"
-  email            : "abdullahkhaled0224@gmail.com"
+  email            : "wolverine.robotics.33791@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:wolverine.robotics.33791@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://wolverine-robotics.github.io"
