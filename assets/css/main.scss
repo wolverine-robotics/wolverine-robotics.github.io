@@ -7,3 +7,227 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* ==========================================================================
+   Wolverine Robotics - Orange & Navy Blue Tech Theme
+   CSS Overrides (using direct class targeting since SCSS vars can't be overridden after imports)
+   ========================================================================== */
+
+/* Body and text colors */
+body {
+  color: #0A1929 !important; /* Deep tech navy */
+  background-color: #ffffff !important;
+}
+
+/* Links - Gray shades (less prominent) */
+a {
+  color: #4a5568 !important; /* Medium gray */
+  
+  &:hover {
+    color: #2a3441 !important; /* Darker gray on hover */
+  }
+  
+  &:visited {
+    color: #6a7588 !important; /* Lighter gray for visited */
+  }
+}
+
+/* Muted text */
+.muted,
+.page__meta,
+.archive__item-excerpt {
+  color: #1E3A5F !important; /* Medium navy */
+}
+
+/* Primary color elements - keep orange for buttons */
+.btn--primary,
+.pagination--pager {
+  background-color: #FF6B35 !important; /* Tech orange */
+  border-color: #FF6B35 !important;
+  color: #ffffff !important;
+  
+  &:hover {
+    background-color: #FF8C42 !important;
+    border-color: #FF8C42 !important;
+  }
+}
+
+/* Masthead - White background with navy text */
+.masthead {
+  background-color: #fff !important; /* White background */
+  border-bottom-color: #FF6B35 !important; /* Orange border */
+  color: #0A1929 !important; /* Navy text */
+  
+  * {
+    color: #0A1929 !important; /* Force all child elements to navy */
+  }
+  
+  a,
+  .site-title,
+  .site-subtitle,
+  .masthead__inner-wrap,
+  .greedy-nav,
+  .greedy-nav a,
+  .site-nav,
+  .site-nav a {
+    color: #0A1929 !important; /* Navy text */
+  }
+  
+  a:hover,
+  .greedy-nav a:hover {
+    color: #FF6B35 !important; /* Orange on hover */
+  }
+}
+
+/* Navigation links in masthead */
+.greedy-nav .visible-links a {
+  color: #0A1929 !important; /* Navy text */
+  
+  &:hover {
+    color: #FF6B35 !important; /* Orange on hover */
+  }
+}
+
+/* Navicon (hamburger menu) */
+.navicon {
+  background-color: #0A1929 !important; /* Navy color */
+  
+  &::before,
+  &::after {
+    background-color: #0A1929 !important; /* Navy color */
+  }
+  
+  &:hover {
+    background-color: #FF6B35 !important; /* Orange on hover */
+    
+    &::before,
+    &::after {
+      background-color: #FF6B35 !important; /* Orange on hover */
+    }
+  }
+}
+
+/* Footer - Navy blue background */
+.page__footer {
+  background-color: #0A1929 !important; /* Navy blue footer */
+  color: #ffffff !important;
+  border-top-color: #FF6B35 !important; /* Orange top border */
+  
+  a {
+    color: #ffffff !important; /* White links in footer */
+    
+    &:hover {
+      color: #FF8C42 !important; /* Orange on hover */
+    }
+  }
+  
+  /* Ensure all text in footer is white */
+  * {
+    color: #ffffff !important;
+  }
+  
+  a {
+    color: #ffffff !important;
+  }
+}
+
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: #ffffff !important;
+  
+  &:hover {
+    color: #FF8C42 !important;
+  }
+}
+
+/* GitHub and Instagram icons - adapt to background color */
+/* Default: On light backgrounds - use dark icons */
+.fa-github,
+.fa-github-alt,
+.fa-github-square {
+  color: #171516 !important; /* Dark color for GitHub on light bg */
+}
+
+.fa-instagram {
+  color: #4a5568 !important; /* Medium gray for Instagram on light bg */
+}
+
+/* Author profile section - use dark icons (light background) */
+.author__urls {
+  .fa-github,
+  .fa-github-alt,
+  .fa-github-square {
+    color: #171516 !important;
+  }
+  
+  .fa-instagram {
+    color: #4a5568 !important;
+  }
+}
+
+/* On dark backgrounds (footer) - use light icons */
+.page__footer .fa-github,
+.page__footer .fa-github-alt,
+.page__footer .fa-github-square,
+.page__footer .fa-instagram,
+.page__footer-follow .fa-github,
+.page__footer-follow .fa-github-alt,
+.page__footer-follow .fa-github-square,
+.page__footer-follow .fa-instagram {
+  color: #ffffff !important; /* White on dark backgrounds */
+  
+  &:hover {
+    color: #FF8C42 !important; /* Orange on hover */
+  }
+}
+
+/* Masthead icons - use dark icons (light background) */
+.masthead .fa-github,
+.masthead .fa-github-alt,
+.masthead .fa-github-square,
+.masthead .fa-instagram {
+  color: #171516 !important; /* Dark icons on light masthead background */
+  
+  &.fa-instagram {
+    color: #4a5568 !important; /* Gray for Instagram */
+  }
+  
+  &:hover {
+    color: #FF6B35 !important; /* Orange on hover */
+  }
+}
+
+/* Borders */
+hr,
+.border,
+.page__content hr + * {
+  border-color: rgba(30, 58, 95, 0.3) !important; /* Medium navy with transparency */
+}
+
+/* Code blocks */
+code {
+  background-color: #f8f9fa !important;
+  color: #0A1929 !important;
+}
+
+pre {
+  background-color: #1a2332 !important;
+  border-left-color: #FF6B35 !important;
+  
+  code {
+    background-color: transparent !important;
+    color: #e0e7f0 !important;
+  }
+}
+
+/* Buttons */
+.btn {
+  &:not(.btn--primary) {
+    border-color: #1E3A5F !important;
+    color: #0A1929 !important;
+    
+    &:hover {
+      border-color: #FF6B35 !important;
+      color: #FF6B35 !important;
+    }
+  }
+}
