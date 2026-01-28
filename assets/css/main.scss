@@ -5,166 +5,275 @@ search: false
 
 @charset "utf-8";
 
+/* ==========================================================================
+   Wolverine Robotics - Official Brand Stylesheet
+   FTC Team 33791
+   ========================================================================== */
+
+/* ==========================================================================
+   Brand Color Variables
+   ========================================================================== */
+
+// Primary Colors
+$wr-blue: #0047AB;          // Deep Electric Blue - RGB(0, 71, 171)
+$wr-orange: #FF8C00;        // Safety/Tiger Orange - RGB(255, 140, 0)
+
+// Secondary/Neutral Colors
+$wr-grey: #A9A9A9;          // Cool Grey/Silver - RGB(169, 169, 169)
+$wr-white: #FFFFFF;         // Stark White - RGB(255, 255, 255)
+$wr-black: #1A1A1A;         // Near Black for text
+
+// Derived Colors
+$wr-blue-light: lighten($wr-blue, 15%);
+$wr-blue-dark: darken($wr-blue, 10%);
+$wr-orange-light: lighten($wr-orange, 10%);
+$wr-orange-dark: darken($wr-orange, 10%);
+
+/* Legacy Variables (for minimal-mistakes compatibility) */
+$background-color: $wr-white !default;
+$text-color: $wr-black !default;
+$primary-color: $wr-blue !default;
+$border-color: mix($wr-grey, $wr-white, 50%) !default;
+$code-background-color: #f5f5f5 !default;
+$code-background-color-dark: $wr-blue-dark !default;
+$form-background-color: $wr-white !default;
+$footer-background-color: $wr-blue !default;
+$link-color: $wr-blue !default;
+$link-color-hover: $wr-orange !default;
+$link-color-visited: $wr-blue-dark !default;
+$masthead-link-color: $wr-blue !default;
+$masthead-link-color-hover: $wr-orange !default;
+$navicon-link-color-hover: $wr-orange !default;
+
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
 /* ==========================================================================
-   Wolverine Robotics - Orange & Navy Blue Tech Theme
-   CSS Overrides (using direct class targeting since SCSS vars can't be overridden after imports)
+   Google Fonts - Official Typography
+   Primary Heading: Montserrat (Bold)
+   Subheaders: Roboto (Medium)
+   Body Text: Open Sans (Regular)
    ========================================================================== */
 
-/* Body and text colors */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap');
+
+/* ==========================================================================
+   Typography Styles
+   ========================================================================== */
+
 body {
-  color: #0A1929 !important; /* Deep tech navy */
-  background-color: #ffffff !important;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  color: $wr-black !important;
+  background-color: $wr-white !important;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Links - Gray shades (less prominent) */
+h1, h2, h3, .site-title, .page__title {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $wr-blue !important;
+}
+
+h4, h5, h6 {
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif !important;
+  font-weight: 500 !important;
+  color: $wr-blue !important;
+}
+
+/* ==========================================================================
+   Links - Blue primary, Orange accent
+   ========================================================================== */
+
 a {
-  color: #4a5568 !important; /* Medium gray */
+  color: $wr-blue !important;
+  transition: color 0.2s ease;
   
   &:hover {
-    color: #2a3441 !important; /* Darker gray on hover */
+    color: $wr-orange !important;
   }
   
   &:visited {
-    color: #6a7588 !important; /* Lighter gray for visited */
+    color: $wr-blue-dark !important;
   }
 }
 
-/* Muted text */
+/* ==========================================================================
+   Muted/Meta Text
+   ========================================================================== */
+
 .muted,
 .page__meta,
 .archive__item-excerpt {
-  color: #1E3A5F !important; /* Medium navy */
+  color: $wr-grey !important;
 }
 
-/* Primary color elements - keep orange for buttons */
+/* ==========================================================================
+   Buttons - Orange for CTAs (calls to action)
+   ========================================================================== */
+
 .btn--primary,
 .pagination--pager {
-  background-color: #FF6B35 !important; /* Tech orange */
-  border-color: #FF6B35 !important;
-  color: #ffffff !important;
+  background-color: $wr-orange !important;
+  border-color: $wr-orange !important;
+  color: $wr-white !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   
   &:hover {
-    background-color: #FF8C42 !important;
-    border-color: #FF8C42 !important;
+    background-color: $wr-orange-dark !important;
+    border-color: $wr-orange-dark !important;
   }
 }
 
-/* Masthead - White background with navy text */
+.btn {
+  &:not(.btn--primary) {
+    border-color: $wr-blue !important;
+    color: $wr-blue !important;
+    font-family: 'Roboto', sans-serif !important;
+    
+    &:hover {
+      border-color: $wr-orange !important;
+      color: $wr-orange !important;
+      background-color: rgba($wr-orange, 0.05) !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Masthead/Header - White background with Blue text
+   ========================================================================== */
+
 .masthead {
-  background-color: #fff !important; /* White background */
-  border-bottom-color: #FF6B35 !important; /* Orange border */
-  color: #0A1929 !important; /* Navy text */
+  background-color: $wr-white !important;
+  border-bottom: 3px solid $wr-orange !important;
   
   * {
-    color: #0A1929 !important; /* Force all child elements to navy */
+    color: $wr-blue !important;
+  }
+  
+  .site-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $wr-blue !important;
   }
   
   a,
-  .site-title,
   .site-subtitle,
   .masthead__inner-wrap,
   .greedy-nav,
   .greedy-nav a,
   .site-nav,
   .site-nav a {
-    color: #0A1929 !important; /* Navy text */
+    color: $wr-blue !important;
   }
   
   a:hover,
   .greedy-nav a:hover {
-    color: #FF6B35 !important; /* Orange on hover */
+    color: $wr-orange !important;
   }
 }
 
-/* Navigation links in masthead */
+/* Navigation links */
 .greedy-nav .visible-links a {
-  color: #0A1929 !important; /* Navy text */
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: $wr-blue !important;
   
   &:hover {
-    color: #FF6B35 !important; /* Orange on hover */
+    color: $wr-orange !important;
   }
 }
 
 /* Navicon (hamburger menu) */
 .navicon {
-  background-color: #0A1929 !important; /* Navy color */
+  background-color: $wr-blue !important;
   
   &::before,
   &::after {
-    background-color: #0A1929 !important; /* Navy color */
+    background-color: $wr-blue !important;
   }
   
   &:hover {
-    background-color: #FF6B35 !important; /* Orange on hover */
+    background-color: $wr-orange !important;
     
     &::before,
     &::after {
-      background-color: #FF6B35 !important; /* Orange on hover */
+      background-color: $wr-orange !important;
     }
   }
 }
 
-/* Footer - Navy blue background */
+/* ==========================================================================
+   Footer - Blue background with white/orange accents
+   ========================================================================== */
+
 .page__footer {
-  background-color: #0A1929 !important; /* Navy blue footer */
-  color: #ffffff !important;
-  border-top-color: #FF6B35 !important; /* Orange top border */
+  background-color: $wr-blue !important;
+  color: $wr-white !important;
+  border-top: 4px solid $wr-orange !important;
+  
+  * {
+    color: $wr-white !important;
+  }
   
   a {
-    color: #ffffff !important; /* White links in footer */
+    color: $wr-white !important;
     
     &:hover {
-      color: #FF8C42 !important; /* Orange on hover */
+      color: $wr-orange !important;
     }
-  }
-  
-  /* Ensure all text in footer is white */
-  * {
-    color: #ffffff !important;
-  }
-  
-  a {
-    color: #ffffff !important;
   }
 }
 
 .page__footer-follow .social-icons .svg-inline--fa {
-  color: #ffffff !important;
+  color: $wr-white !important;
   
   &:hover {
-    color: #FF8C42 !important;
+    color: $wr-orange !important;
   }
 }
 
-/* GitHub and Instagram icons - adapt to background color */
-/* Default: On light backgrounds - use dark icons */
+/* ==========================================================================
+   Social Icons
+   ========================================================================== */
+
+/* On light backgrounds - Blue icons */
 .fa-github,
 .fa-github-alt,
-.fa-github-square {
-  color: #171516 !important; /* Dark color for GitHub on light bg */
-}
-
+.fa-github-square,
 .fa-instagram {
-  color: #4a5568 !important; /* Medium gray for Instagram on light bg */
+  color: $wr-blue !important;
+  
+  &:hover {
+    color: $wr-orange !important;
+  }
 }
 
-/* Author profile section - use dark icons (light background) */
+/* Author profile section */
 .author__urls {
   .fa-github,
   .fa-github-alt,
-  .fa-github-square {
-    color: #171516 !important;
-  }
-  
+  .fa-github-square,
   .fa-instagram {
-    color: #4a5568 !important;
+    color: $wr-blue !important;
+    
+    &:hover {
+      color: $wr-orange !important;
+    }
   }
 }
 
-/* On dark backgrounds (footer) - use light icons */
+/* On dark backgrounds (footer) - White icons */
 .page__footer .fa-github,
 .page__footer .fa-github-alt,
 .page__footer .fa-github-square,
@@ -173,61 +282,355 @@ a {
 .page__footer-follow .fa-github-alt,
 .page__footer-follow .fa-github-square,
 .page__footer-follow .fa-instagram {
-  color: #ffffff !important; /* White on dark backgrounds */
+  color: $wr-white !important;
   
   &:hover {
-    color: #FF8C42 !important; /* Orange on hover */
+    color: $wr-orange !important;
   }
 }
 
-/* Masthead icons - use dark icons (light background) */
+/* Masthead icons */
 .masthead .fa-github,
 .masthead .fa-github-alt,
 .masthead .fa-github-square,
 .masthead .fa-instagram {
-  color: #171516 !important; /* Dark icons on light masthead background */
-  
-  &.fa-instagram {
-    color: #4a5568 !important; /* Gray for Instagram */
-  }
+  color: $wr-blue !important;
   
   &:hover {
-    color: #FF6B35 !important; /* Orange on hover */
+    color: $wr-orange !important;
   }
 }
+
+/* ==========================================================================
+   Content Elements
+   ========================================================================== */
 
 /* Borders */
 hr,
 .border,
 .page__content hr + * {
-  border-color: rgba(30, 58, 95, 0.3) !important; /* Medium navy with transparency */
+  border-color: rgba($wr-grey, 0.4) !important;
 }
 
 /* Code blocks */
 code {
   background-color: #f8f9fa !important;
-  color: #0A1929 !important;
+  color: $wr-blue-dark !important;
+  font-family: 'Roboto Mono', 'Consolas', monospace !important;
 }
 
 pre {
-  background-color: #1a2332 !important;
-  border-left-color: #FF6B35 !important;
+  background-color: $wr-blue-dark !important;
+  border-left: 4px solid $wr-orange !important;
   
   code {
     background-color: transparent !important;
-    color: #e0e7f0 !important;
+    color: #e8eef5 !important;
   }
 }
 
-/* Buttons */
-.btn {
-  &:not(.btn--primary) {
-    border-color: #1E3A5F !important;
-    color: #0A1929 !important;
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid $wr-orange !important;
+  color: $wr-grey !important;
+  font-style: italic;
+}
+
+/* Tables */
+table {
+  border-color: $wr-grey !important;
+  
+  th {
+    background-color: $wr-blue !important;
+    color: $wr-white !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 500 !important;
+  }
+  
+  td {
+    border-color: lighten($wr-grey, 20%) !important;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba($wr-blue, 0.03) !important;
+  }
+}
+
+/* ==========================================================================
+   Archive/Collection Pages
+   ========================================================================== */
+
+.archive__item-title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  color: $wr-blue !important;
+  
+  a {
+    color: $wr-blue !important;
     
     &:hover {
-      border-color: #FF6B35 !important;
-      color: #FF6B35 !important;
+      color: $wr-orange !important;
     }
+  }
+}
+
+/* ==========================================================================
+   Sidebar/Author Profile
+   ========================================================================== */
+
+.sidebar .author__name {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  color: $wr-blue !important;
+}
+
+.author__bio {
+  font-family: 'Open Sans', sans-serif !important;
+  color: $wr-black !important;
+}
+
+/* ==========================================================================
+   Notice/Alert Boxes
+   ========================================================================== */
+
+.notice--primary {
+  background-color: rgba($wr-blue, 0.1) !important;
+  border-left: 4px solid $wr-blue !important;
+}
+
+.notice--warning {
+  background-color: rgba($wr-orange, 0.1) !important;
+  border-left: 4px solid $wr-orange !important;
+}
+
+/* ==========================================================================
+   Wolverine Robotics - Custom Brand Classes
+   Use these classes throughout your content for consistent branding
+   ========================================================================== */
+
+.wr-blue { color: $wr-blue !important; }
+.wr-orange { color: $wr-orange !important; }
+.wr-grey { color: $wr-grey !important; }
+
+.wr-bg-blue { background-color: $wr-blue !important; color: $wr-white !important; }
+.wr-bg-orange { background-color: $wr-orange !important; color: $wr-white !important; }
+.wr-bg-grey { background-color: $wr-grey !important; }
+
+.wr-heading {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.wr-subheading {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.wr-body {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.wr-accent {
+  color: $wr-orange !important;
+}
+
+.wr-team-number {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 800 !important;
+  color: $wr-orange !important;
+}
+
+/* ==========================================================================
+   Robots Page - Matchstick Layout
+   ========================================================================== */
+
+.robots-page {
+  padding-top: 2rem;
+}
+
+.robots-hero-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  padding: 2.25rem;
+  border-radius: 18px;
+  background-color: #0b1120; /* clean dark slate */
+  color: $wr-white;
+  border: 1px solid rgba($wr-white, 0.08);
+  box-shadow: 0 18px 40px rgba($wr-black, 0.38);
+}
+
+.robots-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.robots-tile {
+  position: relative;
+  border-radius: 14px;
+  background: linear-gradient(140deg, #1d3557, #e76f51);
+  border: none;
+  box-shadow: 0 10px 24px rgba($wr-black, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.robots-tile--main {
+  aspect-ratio: 1 / 1;
+}
+
+.robots-tile--small {
+  aspect-ratio: 1 / 1;
+}
+
+.robots-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.robots-tile__label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 5vw, 3.5rem);
+  letter-spacing: 0.08em;
+}
+
+.robots-tile__index {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: rgba($wr-white, 0.9);
+}
+
+.robots-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: $wr-white;
+}
+
+.robots-season {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.85rem;
+  color: rgba($wr-white, 0.75);
+  margin: 0;
+}
+
+.robots-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 3vw, 2.6rem);
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: $wr-white !important;
+}
+
+.robots-subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: rgba($wr-white, 0.8);
+  max-width: 40rem;
+}
+
+.robots-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.robots-stat-card {
+  padding: 0.8rem 0.9rem;
+  border-radius: 10px;
+  background: rgba($wr-white, 0.02);
+  border: 1px solid rgba($wr-white, 0.08);
+}
+
+.robots-stat-card__label {
+  margin: 0 0 0.15rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba($wr-white, 0.7);
+}
+
+.robots-stat-card__value {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: $wr-white;
+}
+
+.robots-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.robots-info-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: 10px;
+  color: $wr-white;
+  box-shadow: 0 10px 26px rgba($wr-black, 0.35);
+}
+
+.robots-info-card--blue {
+  background: linear-gradient(145deg, $wr-blue-dark, #1d4ed8);
+}
+
+.robots-info-card--orange {
+  background: linear-gradient(145deg, $wr-orange-dark, #f97316);
+}
+
+.robots-info-card__title {
+  margin: 0 0 0.6rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.robots-info-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+}
+
+.robots-info-card li + li {
+  margin-top: 0.25rem;
+}
+
+/* Responsive layout for robots page */
+@media (max-width: 960px) {
+  .robots-hero-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .robots-hero-left {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .robots-hero-card {
+    padding: 1.5rem;
+  }
+
+  .robots-stats-grid,
+  .robots-info-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
