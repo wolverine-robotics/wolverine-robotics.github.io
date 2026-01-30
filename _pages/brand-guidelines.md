@@ -1,14 +1,3 @@
----
-title: "Brand Guidelines"
-permalink: /brand-guidelines/
-layout: single
-author_profile: false
-toc: true
-toc_label: "Contents"
-toc_icon: "palette"
-toc_sticky: true
----
-
 # Wolverine Robotics Brand Guidelines
 
 **Official Style Guide for FTC Team 33791**

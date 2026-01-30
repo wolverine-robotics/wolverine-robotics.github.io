@@ -3,7 +3,7 @@ layout: single
 title: "Team"
 permalink: /team/
 author_profile: false
-toc: true
+toc: false
 toc_label: "Team Contents"
 toc_icon: "users"
 
@@ -71,8 +71,8 @@ feature_row_students:
 
 feature_row_mentors:
   - image_path: /assets/images/wolverineRoboticsPFP.png
-    alt: "Abdullah Khalid"
-    title: "Abdullah Khalid"
+    alt: "Abdullah Khaled"
+    title: "Abdullah Khaled"
     excerpt: "Youth Software Mentor"
 
 feature_row_coaches:
@@ -85,8 +85,6 @@ feature_row_coaches:
     title: "Mr. Gavande"
     excerpt: "Coach"
 ---
-
-# Meet the Team
 
 Wolverine Robotics, FTC Team 33791, is made up of dedicated students, mentors, and supporters who all share a passion for STEM, teamwork, and innovation.
 

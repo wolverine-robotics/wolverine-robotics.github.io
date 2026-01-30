@@ -3,12 +3,10 @@ layout: single
 title: "Our Sponsors"
 permalink: /sponsors/
 author_profile: false
-toc: true
+toc: false
 toc_label: "Sponsor Contents"
 toc_icon: "heart"
 ---
-
-# Our Sponsors
 
 Wolverine Robotics could not compete, learn, and grow without the generous support of our sponsors and partners.
 
