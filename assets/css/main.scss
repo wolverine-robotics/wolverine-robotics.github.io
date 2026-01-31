@@ -783,3 +783,146 @@ table {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* ==========================================================================
+   Resources Page - Stealth Lab (link library)
+   ========================================================================== */
+
+.resources-page {
+  padding-top: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.resources-table {
+  width: 100% !important;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resources-table td {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.resources-cell {
+  vertical-align: top;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba($steel-grey, 0.4);
+}
+
+.resources-cell .resources-section {
+  margin-bottom: 1.5rem;
+}
+
+.resources-cell .resources-section:last-child {
+  margin-bottom: 0;
+}
+
+.resources-intro {
+  font-family: 'Montserrat', sans-serif !important;
+  color: $steel-grey !important;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 42rem;
+}
+
+.resources-section {
+  margin-bottom: 2.5rem;
+}
+
+.resources-section__title {
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-weight: 500 !important;
+  color: $voltage-orange !important;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba($steel-grey, 0.4);
+}
+
+.resources-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.resources-list li {
+  margin: 0.4rem 0;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba($midnight-navy, 0.5);
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.resources-list li:hover {
+  background-color: rgba($voltage-orange, 0.08);
+  border-left-color: $voltage-orange;
+}
+
+.resources-list li.resources-list--starred {
+  border-left-color: rgba($voltage-orange, 0.6);
+}
+
+.resources-list a {
+  color: $wr-white !important;
+  text-decoration: none !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.resources-list a:hover {
+  color: $voltage-orange !important;
+}
+
+.resources-list em {
+  color: $steel-grey !important;
+  font-size: 0.9em;
+}
+
+.resources-quick-ref {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.resources-quick-card {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  background-color: rgba($voltage-orange, 0.12);
+  border: 1px solid rgba($voltage-orange, 0.4);
+  color: $voltage-orange !important;
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 0);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.resources-quick-card:hover {
+  background-color: rgba($voltage-orange, 0.25);
+  border-color: $voltage-orange;
+  color: $wr-white !important;
+}
+
+@media (max-width: 768px) {
+  .resources-table,
+  .resources-table tbody,
+  .resources-table tr,
+  .resources-table td {
+    display: block;
+  }
+  
+  .resources-cell {
+    margin-bottom: 1rem;
+    border: 1px solid rgba($steel-grey, 0.4);
+  }
+}

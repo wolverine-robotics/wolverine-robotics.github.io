@@ -8,6 +8,8 @@ main:
     url: /robot/
   - title: "Sponsors"
     url: /sponsors/
+  - title: "Resources"
+    url: /resources/
   - title: "About"
     url: /about/
   - title: "Contact"
