@@ -197,12 +197,28 @@ a {
     color: $wr-white !important;
   }
   
+  .site-logo {
+    padding: 0em 0.75em 0em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .site-logo img {
+    max-height: 2.5rem;
+    border-radius: 5%;
+  }
+  
   .site-title {
     font-family: 'Russo One', sans-serif !important;
     font-weight: 400 !important;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: $wr-white !important;
+    font-size: calc(1em + 2px) !important;
+  }
+  
+  .site-subtitle {
+    font-size: calc(0.625em + 2px) !important;
   }
   
   a,
@@ -221,12 +237,14 @@ a {
   }
 }
 
-.greedy-nav .visible-links a {
+.greedy-nav .visible-links a,
+.greedy-nav .hidden-links a {
   font-family: 'Chakra Petch', sans-serif !important;
   font-weight: 500 !important;
   text-transform: none;
   letter-spacing: 0.02em;
   color: $wr-white !important;
+  font-size: calc(1em + 2px) !important;
   
   &:hover {
     color: $voltage-orange !important;
@@ -261,6 +279,11 @@ a {
   color: $wr-white !important;
   border-top: 2px solid $steel-grey !important;
   position: relative;
+  font-size: calc(1em + 2px) !important;
+  
+  footer {
+    padding: 0 0 !important;
+  }
   
   /* Wolverine Claw: three parallel 45° diagonal lines in Steel Grey (newbrand.md) */
   &::after {
@@ -291,6 +314,20 @@ a {
       color: $voltage-orange !important;
     }
   }
+}
+
+.page__footer-copyright {
+  font-size: calc(0.6875em + 2px) !important;
+  padding: .5em .5em 1em  !important;
+}
+
+.page__footer-follow li {
+  font-size: calc(0.75em + 2px) !important;
+  padding: 0em .5em .2em !important;
+}
+
+.page__footer-follow a {
+  padding-inline-end: 1em !important;
 }
 
 .page__footer-follow .social-icons .svg-inline--fa {

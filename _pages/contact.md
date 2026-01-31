@@ -6,23 +6,17 @@ author_profile: false
 toc: false
 ---
 
-# Contact Us
 
 Have questions about Wolverine Robotics, outreach events, sponsorship, or joining the team? Reach out using the information below.
 
 ## Email
 
-- **General Inquiries**: _your-team-email@example.com_
-- **Sponsorship & Outreach**: _your-sponsorship-email@example.com_
-
-Update these addresses to your real team contacts.
+- **General Inquiries, Sponsorship & Outreach**: _wolverine.robotics.33791@example.com_
 
 ## Social Media
 
-Add your official channels here:
-
-- **Instagram**: _@YourTeamHandle_
-- **X / Twitter**: _@YourTeamHandle_
+- **Instagram**: _@wolverinerobotics_
+- **LinkedIn**: _[Wolverine Robotics](https://www.linkedin.com/company/wolverine-robotics/)_
 - **YouTube**: _Your Channel Name_
 
 ## Location

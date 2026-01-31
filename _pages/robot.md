@@ -30,12 +30,12 @@ toc: false
           <p class="robots-stat-card__value">18 in</p>
         </div>
         <div class="robots-stat-card">
-          <p class="robots-stat-card__label">OPR</p>
-          <p class="robots-stat-card__value">72.49</p>
+          <p class="robots-stat-card__label">Rank</p>
+          <p class="robots-stat-card__value">Top 10% World</p>
         </div>
         <div class="robots-stat-card">
-          <p class="robots-stat-card__label">Rank</p>
-          <p class="robots-stat-card__value">11</p>
+          <p class="robots-stat-card__label">Key Metric</p>
+          <p class="robots-stat-card__value">Auto Aim</p>
         </div>
       </div>
       <!-- <div class="robots-info-grid">
