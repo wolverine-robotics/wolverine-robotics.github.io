@@ -1,16 +1,1 @@
-# main links
-main:
-  - title: "Home"
-    url: /
-  - title: "Team"
-    url: /team/
-  - title: "Robots"
-    url: /robot/
-  - title: "Sponsors"
-    url: /sponsors/
-  - title: "Resources"
-    url: /resources/
-  - title: "About"
-    url: /about/
-  - title: "Contact"
-    url: /contact/
+# main
